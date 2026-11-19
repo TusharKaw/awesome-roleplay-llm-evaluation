@@ -847,6 +847,20 @@ Role-playing evaluation framework.
 
 ---
 
+## Tavern Reply Checker
+
+https://github.com/agent-mcocdaa/tavern-reply-checker
+
+Offline, single-file counter for reply-level failures in role-play transcripts: replies that repeat the user's own lines back, canned phrases, mid-sentence cuts, CJK/Latin glitches, and length drift. Runs in the browser tab, no model call, no upload.
+
+- **What it evaluates:** per-reply surface failures in an exported transcript (SillyTavern `Export → JSONL` or any line-per-message log). It does not judge persona quality or model preference.
+- **Code or data available:** code, MIT, one HTML file, no dependencies, zero network requests. The transcripts used to regression-test it are client data and are not redistributed.
+- **Reproducible:** yes — deterministic string counting; the same input gives the same numbers, computed locally.
+- **Human evaluation:** one hand-labelled set (175 replies, one character card). The "verbatim repeat of the user's line" rule fired on 7/7 hand-confirmed cases and 0 other replies; the older name-prefix heuristic fired on only 3/7. This is a small consistency check, not a benchmark.
+- **Relationship:** I maintain this tool (disclosed per the contributing notes).
+
+---
+
 # Contributing
 
 Contributions are welcome.
